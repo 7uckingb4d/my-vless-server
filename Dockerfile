@@ -1,6 +1,3 @@
-FROM alpine:latest
-RUN apk update && apk add --no-cache curl bash jq
-RUN bash <(curl -Ls https://githubusercontent.com)
-ENV PORT=10000
+FROM ghcr.io/mhsanaei/3x-ui:latest
+ENV XRAY_VMESS_AEAD_FORCED=false
 EXPOSE 10000
-CMD ["/usr/local/x-ui/x-ui"]
